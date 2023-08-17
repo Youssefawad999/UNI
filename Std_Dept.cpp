@@ -108,6 +108,56 @@ public:
         departmentVector.push_back(*this);
     }
 };
+class Uni
+    {
+    private:
+        vector<Course> courses;
+
+        string name;
+        int age;
+        static Uni *instancePtr;
+        Uni() {}
+
+    public:
+        Uni(const Uni &obj) = delete;
+        static Uni *getInstance()
+        {
+            if (instancePtr == NULL)
+            {
+                instancePtr = new Uni();
+                return instancePtr;
+            }
+            else
+            {
+                return instancePtr;
+            }
+        }
+
+        void setName(string name)
+        {
+            this->name = name;
+        }
+        void setAge(int age)
+        {
+            this->age = age;
+        }
+
+        string getName()
+        {
+            return name;
+        }
+
+        int getAge()
+        {
+            return age;
+        }
+
+        void print()
+        {
+            cout << "Name: " << name << ", age: " << age << endl;
+        }
+    };
+
 
 int main() {
     vector<Student> studentList;
